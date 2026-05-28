@@ -6,7 +6,7 @@ import re
 # 1. ページの設定（タイトルやレイアウト）
 st.set_page_config(page_title="任天堂中古ゲーム 相場検索システム", layout="wide")
 
-st.title("🎮 任天堂中古ゲームソフト 相場検索システム")
+st.title("任天堂中古ゲームソフト 相場検索システム")
 st.caption("ブックオフオンラインのデータからリアルタイム（収集時点）の相場を分析します")
 
 # 🔄 古いバグデータを強制クリアするためのボタンを設置
@@ -69,7 +69,7 @@ else:
         filtered_df = filtered_df[filtered_df["ゲームタイトル"].str.contains(search_keyword, case=False, na=False)]
 
     # 5. 相場情報のダッシュボード表示
-    st.subheader("📊 検索結果の相場統計")
+    st.subheader("検索結果の相場統計")
     
     # 有効な価格データがあるものだけで統計を計算
     valid_prices = filtered_df['価格_数値'].dropna()
@@ -90,7 +90,7 @@ else:
     st.markdown("---")
 
     # 6. データ一覧の表示
-    st.subheader("📋 該当ソフト一覧")
+    st.subheader("該当ソフト一覧")
     
     if not filtered_df.empty:
         display_df = filtered_df[["機種", "ゲームタイトル", "価格", "詳細URL"]]
